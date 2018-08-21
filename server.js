@@ -2,6 +2,8 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
+
+const port = process.env.PORT || 3000;
 var app = express(); //toto treba aby sa vytvoril server
 
 hbs.registerPartials(__dirname + '/views/partials');
@@ -49,8 +51,8 @@ app.get('/about', (req, res) => { // toto sa zase ukaze uzivatelovi ked pride na
 	});
 });
 
-app.listen(3000, () => {
-	console.log('Server je na porte 3000');
+app.listen(port, () => {
+	console.log(`Server je na porte ${port}`);
 }); //port na ktorom caka aplikacia
 
 app.get('/bad', (req,res) => {
