@@ -51,6 +51,12 @@ app.get('/about', (req, res) => { // toto sa zase ukaze uzivatelovi ked pride na
 	});
 });
 
+app.get('/projects', (req, res) => {
+	res.render('projects.hbs',{
+		pageTitle:'Projects'
+	})
+});
+
 app.listen(port, () => {
 	console.log(`Server je na porte ${port}`);
 }); //port na ktorom caka aplikacia
@@ -61,3 +67,4 @@ app.get('/bad', (req,res) => {
 		errorMessage: 'Could not find server'
 	});
 });
+
